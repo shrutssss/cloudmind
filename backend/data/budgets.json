@@ -1,0 +1,26 @@
+[
+  {
+    "project_id": "proj-prod-ecommerce",
+    "monthly_budget": 12000,
+    "alert_threshold_pct": 80,
+    "current_month_spend": 10429.11,
+    "budget_used_pct": 86.9,
+    "alert_triggered": true
+  },
+  {
+    "project_id": "proj-staging-ml-platform",
+    "monthly_budget": 5000,
+    "alert_threshold_pct": 80,
+    "current_month_spend": 3199.98,
+    "budget_used_pct": 64.0,
+    "alert_triggered": false
+  },
+  {
+    "project_id": "proj-dev-internal-tools",
+    "monthly_budget": 2000,
+    "alert_threshold_pct": 80,
+    "current_month_spend": 980.01,
+    "budget_used_pct": 49.0,
+    "alert_triggered": false
+  }
+]

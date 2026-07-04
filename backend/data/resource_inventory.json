@@ -1,0 +1,194 @@
+[
+  {
+    "resource_id": "vm-prod-us-central1-001",
+    "project_id": "proj-prod-ecommerce",
+    "name": "web-server-prod-1",
+    "type": "n2-standard-4",
+    "region": "us-central1",
+    "state": "RUNNING",
+    "vcpus": 4,
+    "memory_gb": 16,
+    "monthly_cost": 122.4,
+    "provisioned_date": "2025-08-15",
+    "labels": {
+      "team": "platform",
+      "environment": "production"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-002",
+    "project_id": "proj-prod-ecommerce",
+    "name": "api-server-prod-1",
+    "type": "n2-standard-4",
+    "region": "us-east1",
+    "state": "RUNNING",
+    "vcpus": 4,
+    "memory_gb": 16,
+    "monthly_cost": 122.4,
+    "provisioned_date": "2025-09-02",
+    "labels": {
+      "team": "platform",
+      "environment": "production"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-003",
+    "project_id": "proj-prod-ecommerce",
+    "name": "checkout-worker-prod",
+    "type": "n2-standard-8",
+    "region": "us-central1",
+    "state": "RUNNING",
+    "vcpus": 8,
+    "memory_gb": 32,
+    "monthly_cost": 245.5,
+    "provisioned_date": "2025-10-10",
+    "labels": {
+      "team": "commerce",
+      "environment": "production"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-004",
+    "project_id": "proj-prod-ecommerce",
+    "name": "legacy-batch-prod",
+    "type": "n2-standard-16",
+    "region": "us-central1",
+    "state": "RUNNING",
+    "vcpus": 16,
+    "memory_gb": 64,
+    "monthly_cost": 491.0,
+    "provisioned_date": "2025-06-20",
+    "labels": {
+      "team": "data",
+      "environment": "production"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-005",
+    "project_id": "proj-prod-ecommerce",
+    "name": "cache-server-prod",
+    "type": "n2-standard-8",
+    "region": "us-east1",
+    "state": "RUNNING",
+    "vcpus": 8,
+    "memory_gb": 32,
+    "monthly_cost": 245.5,
+    "provisioned_date": "2025-07-08",
+    "labels": {
+      "team": "platform",
+      "environment": "production"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-006",
+    "project_id": "proj-staging-ml-platform",
+    "name": "feature-extract-staging",
+    "type": "n2-standard-8",
+    "region": "us-central1",
+    "state": "RUNNING",
+    "vcpus": 8,
+    "memory_gb": 32,
+    "monthly_cost": 245.5,
+    "provisioned_date": "2025-11-12",
+    "labels": {
+      "team": "ml-platform",
+      "environment": "staging"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-007",
+    "project_id": "proj-staging-ml-platform",
+    "name": "model-train-oversized",
+    "type": "n2-standard-16",
+    "region": "us-central1",
+    "state": "RUNNING",
+    "vcpus": 16,
+    "memory_gb": 64,
+    "monthly_cost": 491.0,
+    "provisioned_date": "2025-12-01",
+    "labels": {
+      "team": "ml-platform",
+      "environment": "staging"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-008",
+    "project_id": "proj-dev-internal-tools",
+    "name": "abandoned-cron-dev",
+    "type": "n2-standard-4",
+    "region": "us-central1",
+    "state": "RUNNING",
+    "vcpus": 4,
+    "memory_gb": 16,
+    "monthly_cost": 122.4,
+    "provisioned_date": "2025-03-14",
+    "labels": {
+      "team": "internal-tools",
+      "environment": "development"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-009",
+    "project_id": "proj-dev-internal-tools",
+    "name": "old-jenkins-agent",
+    "type": "n2-standard-8",
+    "region": "us-central1",
+    "state": "RUNNING",
+    "vcpus": 8,
+    "memory_gb": 32,
+    "monthly_cost": 245.5,
+    "provisioned_date": "2024-11-20",
+    "labels": {
+      "team": "internal-tools",
+      "environment": "development"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-010",
+    "project_id": "proj-staging-ml-platform",
+    "name": "deprecated-api-test",
+    "type": "n2-standard-4",
+    "region": "us-east1",
+    "state": "RUNNING",
+    "vcpus": 4,
+    "memory_gb": 16,
+    "monthly_cost": 122.4,
+    "provisioned_date": "2025-02-18",
+    "labels": {
+      "team": "ml-platform",
+      "environment": "staging"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-011",
+    "project_id": "proj-dev-internal-tools",
+    "name": "dev-sandbox-old",
+    "type": "n2-standard-8",
+    "region": "us-central1",
+    "state": "STOPPED",
+    "vcpus": 8,
+    "memory_gb": 32,
+    "monthly_cost": 48.2,
+    "provisioned_date": "2025-01-05",
+    "labels": {
+      "team": "internal-tools",
+      "environment": "development"
+    }
+  },
+  {
+    "resource_id": "vm-prod-us-central1-012",
+    "project_id": "proj-staging-ml-platform",
+    "name": "staging-loadtest-archive",
+    "type": "n2-standard-16",
+    "region": "us-central1",
+    "state": "STOPPED",
+    "vcpus": 16,
+    "memory_gb": 64,
+    "monthly_cost": 96.4,
+    "provisioned_date": "2024-09-30",
+    "labels": {
+      "team": "ml-platform",
+      "environment": "staging"
+    }
+  }
+]
