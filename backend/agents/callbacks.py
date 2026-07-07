@@ -7,6 +7,27 @@ from .config import is_tool_allowed
 
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "db", "cloudmind.db")
 
+# Map specialist tool names to their owning agent so callback permissions
+# are evaluated against the delegated specialist, not the root orchestrator.
+TOOL_OWNER_MAP = {
+    "get_cost_breakdown": "cost_analysis",
+    "get_top_spending": "cost_analysis",
+    "compare_periods": "cost_analysis",
+    "get_budget_status": "cost_analysis",
+    "detect_cost_spikes": "anomaly_detection",
+    "check_budget_alerts": "anomaly_detection",
+    "identify_zombie_resources": "anomaly_detection",
+    "flag_anomaly": "anomaly_detection",
+    "get_resource_utilization": "rightsizing",
+    "analyze_all_resources": "rightsizing",
+    "calculate_savings": "rightsizing",
+    "get_monthly_totals": "forecast",
+    "generate_forecast": "forecast",
+    "assess_budget_risk": "forecast",
+    "get_all_agent_findings": "report",
+    "generate_report": "report",
+}
+
 def _log_to_audit(agent_name: str, tool_name: str, status: str, details: str = ""):
     """Write directly to the audit log database."""
     try:
@@ -28,8 +49,14 @@ async def before_tool_callback(tool, args, tool_context: ToolContext):
     Returns None to allow the tool call.
     Returns a dict to BLOCK the tool call and use the dict as the result.
     """
-    agent_name = tool_context.state.get("current_agent_name", "unknown")
     tool_name = tool.name
+    agent_name = tool_context.state.get("current_agent_name", "unknown")
+
+    inferred_owner = TOOL_OWNER_MAP.get(tool_name)
+    if inferred_owner and agent_name != inferred_owner:
+        tool_context.state["current_agent_name"] = inferred_owner
+        agent_name = inferred_owner
+
     print(f"[CALLBACK] Agent '{agent_name}' trying to run tool '{tool_name}' with args {args}")
     if not is_tool_allowed(agent_name, tool_name):
         print(f"[CALLBACK] DENIED: '{tool_name}' is not allowed for '{agent_name}'")
